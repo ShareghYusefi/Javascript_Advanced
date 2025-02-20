@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script>
+      function testResults(event) {
+        // process the form submission
+        console.log("Form submitted");
+        // document object represents the whole HTML document rendered in the browser
+        var form = document.forms["myForm"];
+        // get the value of the input field with name="email"
+        var email = form["email"].value;
+        var password = form["password"].value;
+        var subscribe = form["subscribe"].value;
+        var decision = form["decision"].value;
+
+        console.log("Email: " + email);
+        console.log("Password: " + password);
+        console.log("Subscribe: " + subscribe);
+        console.log("Decision: " + decision);
+
+        // send the form data to the server using AJAX to replace need for action attribute
+
+        // prevent the default form submission to current page/reload
+        event.preventDefault();
+      }
+    </script>
+  </head>
+  <body class="container">
+    <h1>JS Form</h1>
+
+    <!-- Without action attribute, the form will submit to the same page -->
+    <!-- We can use onsubmit attribute to call a function when the form is submitted -->
+    <form name="myForm" onsubmit="testResults(event)">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          name="password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="decision"
+          id="flexRadioDefault1"
+          value="blue"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Blue Pill
+        </label>
+      </div>
+      <div class="mb-3 form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="decision"
+          id="flexRadioDefault2"
+          value="red"
+          checked
+        />
+        <label class="form-check-label" for="flexRadioDefault2">
+          Red Pill
+        </label>
+      </div>
+
+      <div class="mb-3 form-check">
+        <input
+          name="subscribe"
+          type="checkbox"
+          class="form-check-input"
+          id="exampleCheck1"
+        />
+        <label class="form-check-label" for="exampleCheck1"
+          >Subscribe for newsletter.</label
+        >
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </body>
+</html>
