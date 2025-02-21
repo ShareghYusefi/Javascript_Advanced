@@ -10,6 +10,21 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <style>
+      .panel {
+        padding: 35px;
+        width: 50px;
+        position: absolute;
+      }
+
+      #panel2 {
+        left: 175px;
+      }
+
+      #panel3 {
+        left: 275px;
+      }
+    </style>
     <!-- Add jQuery library -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -88,5 +103,9 @@
     </form>
 
     <h2 id="data-heading">Form Data</h2>
+
+    <div class="panel bg-success" id="panel1"></div>
+    <div class="panel bg-danger" id="panel2"></div>
+    <div class="panel bg-warning" id="panel3"></div>
   </body>
 </html>

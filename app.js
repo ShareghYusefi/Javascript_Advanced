@@ -43,6 +43,18 @@ $(document).ready(
         .addClass("bg-primary")
         .addClass("text-white")
         .attr("data-test", "test");
+
+      // CSS animations
+      $("#panel2").hide();
+      //   slide panel 3 to right
+      //   $("#panel3").animate({ right: "100" }, "slow");
+
+      // fade out panel 1
+      $("#panel1").fadeOut(3000);
+
+      //slideDown panel 3
+      $("#panel3").slideDown(3000);
+
       // prevent the default form submission to current page/reload
       event.preventDefault();
     });
