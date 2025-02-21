@@ -22,12 +22,27 @@ $(document).ready(
       // add a div element with id="result" to the body of the document
       $("body").append('<div id="result"></div>');
 
-      // get the div element with id="result" and set the innerHTML
-      $("#result").html(`
-            <h2>Form Data</h2>
-            <p>Email: ${email}</p>
-          `);
+      // update h2 element with new text
+      $("#data-heading").text("Form Submited with JQuery");
 
+      // update exampleCheck1 with value of purple pill
+      // use attr to set checked attribute of a radio button
+      $("#flexRadioDefault2").val("purple pill").attr("checked", true);
+      $("label[for='flexRadioDefault2']").text("Purple Pill");
+
+      // get the div element with id="result" and set the innerHTML
+      // add class of container to result
+      // add more classes to class list
+      $("#result")
+        .html(
+          `
+            <p>Email: ${email}</p>
+          `
+        )
+        .addClass("container")
+        .addClass("bg-primary")
+        .addClass("text-white")
+        .attr("data-test", "test");
       // prevent the default form submission to current page/reload
       event.preventDefault();
     });
