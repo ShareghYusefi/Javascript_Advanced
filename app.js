@@ -47,12 +47,12 @@ $(document).ready(
       // CSS animations
       $("#panel2").hide();
       //   slide panel 3 to right
-      //   $("#panel3").animate({ right: "100" }, "slow");
+      $("#panel1").animate({ left: "+=100px" }, "slow");
 
       // fade out panel 1
-      $("#panel1").fadeOut(3000);
+      //   $("#panel1").fadeOut(3000);
 
-      //slideDown panel 3
+      // slideDown panel 3 into view
       $("#panel3").slideDown(3000);
 
       // prevent the default form submission to current page/reload
